@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+        <!-- <table>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+        </table> -->
+    
+</body>
+
+<script>
+
+    let n = +prompt("Введите число строк");
+    let m = +prompt("Введите число ячеек в стороке");
+    let myTable = document.createElement("table");
+    myTable.setAttribute("id","box");
+    document.body.append(myTable);
+
+    function getListContent() {
+    let result = [];
+
+        for(let i=1; i<=n; i++) {
+        let tr = document.createElement('tr');
+
+                for(let j=1; j<=m; j++) {
+                let td = document.createElement('td');
+                td.setAttribute("style","border: 1px solid blue");
+                td.innerHTML = `Ячейка ${j}`;
+                tr.append(td); 
+                }
+                result.push(tr);
+            
+
+                        setTimeout(function(){
+                            let text =  tr.getElementsByTagName('td');
+                            for(let k = 0;k<text.length; k++){
+                                text[k].innerHTML = "";
+                            }
+                        }, 2000);
+                                      setTimeout(function() {
+            
+                                          tr.remove(tr.getElementsByTagName('td'));
+                                          }, 4000);
+
+
+
+                                                        setTimeout(function() {tr.remove()}, 6000);   
+        }
+        
+    return result;
+    
+    }
+   
+    box.append(...getListContent());
+
+    myTable.style =`
+    border: 1px solid black;
+    width: 600px;
+    height: 600px;
+    `;
+    
+    setTimeout(function() {myTable.remove()}, 8000);
+
+
+
+
+    
+    
+    
+
+
+
+
+
+
+
+
+
+    
+
+   
+
+
+</script>
+</html>
